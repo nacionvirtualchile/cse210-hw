@@ -13,6 +13,9 @@ public class Resume
     // new keyword followed by the class name and parentheses.
     public void DisplayResumeDetails()
     {
+        
+        Console.WriteLine("----------");
+        Console.WriteLine("----------");
         Console.WriteLine("Person name: "+_personName);
         Console.WriteLine("His/Her jobs:");
         foreach (Job job in _listOfJob)
@@ -20,6 +23,8 @@ public class Resume
             // Console.WriteLine("   "+job._companyName+" - "+job._jobTitle+" - "+job._startYear+" - "+job._endYear);
             job.DisplayJobDetails();
         }
+        Console.WriteLine("----------");
+        Console.WriteLine("----------");
 
 
     }
