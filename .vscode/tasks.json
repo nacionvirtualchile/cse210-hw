@@ -3,6 +3,12 @@
     "version": "2.0.0",
     "tasks": [
 
+        // {
+        //     "label": "echo",
+        //     "type": "shell",
+        //     "command": "echo ${workspaceFolder}"
+        // },
+
         {
             "label": "build-sandbox-Sandbox",
             "command": "dotnet",
