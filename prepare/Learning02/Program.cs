@@ -12,7 +12,7 @@ class Program
         job1._startYear = 2000;
         job1._endYear = 2010;
         //Console.WriteLine(job1._companyName);
-        job1.DisplayJobDetails();
+        // job1.DisplayJobDetails();
 
         Job job2 = new Job();
         job2._jobTitle = "Software Engineer";
@@ -20,7 +20,15 @@ class Program
         job2._startYear = 2000;
         job2._endYear = 2010;
         //Console.WriteLine(job2._companyName);
-        job2.DisplayJobDetails();
+        // job2.DisplayJobDetails();
         
+        Resume resume1 = new Resume();
+        resume1._personName = "Andrés Rojas";
+        resume1._listOfJob.Add(job1);
+        resume1._listOfJob.Add(job2);
+
+        // Console.WriteLine(resume1._listOfJob[0]._jobTitle);
+        resume1.DisplayResumeDetails();
+
     }
 }
