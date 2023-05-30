@@ -12,6 +12,13 @@ public class Reference
     private string _finalVerse = "";
 
 //CONSTRUCTOR
+    public Reference (){
+        _book = "";
+        _chapter = "";
+        _verse = "";
+        
+    }
+
     public Reference (string scripture){
         string[] parts = scripture.Split("|");
         _book = parts[0];
@@ -29,7 +36,7 @@ public class Reference
         
     }
     
-//GETTER
+//GETTER to format the name of the reference
     public string GetFormatName()
     {
         string FormatName;
@@ -40,5 +47,29 @@ public class Reference
         }
         return FormatName;
     }
+
+//To format the name of the reference to save the scripture to the file
+    public string GetFormatNameToSave()
+    {
+        return $"{_book}|{_chapter}|{_verse}|";
+    }
+
+    public void SetBook(string InputBook)
+    {
+        _book = InputBook;
+    }
+
+    public void SetChapter(string InputChapter)
+    {
+        _chapter = InputChapter;
+    }
+
+        public void SetVerse(string InputVerse)
+    {
+        _verse = InputVerse;
+    }
+
+
+
 
 }

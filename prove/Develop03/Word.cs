@@ -24,7 +24,7 @@ public class Word
     
     }
 
-
+//To hide a word and controll the rest
     public string HidenWord(){
         
         string quit;
@@ -64,14 +64,11 @@ public class Word
 
     }
 
-
+//To display the modified scripture
     public void DisplayWords(){
         
         Console.WriteLine("----------------------------");
         Console.WriteLine("----------------------------");
-        Console.WriteLine("Welcome to Scripture Memorizer!");
-        Console.WriteLine("----------------------------");
-        
         Console.WriteLine($"Reference: {_reference}");
         Console.Write("Scripture: ");
 

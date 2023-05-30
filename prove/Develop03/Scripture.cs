@@ -12,7 +12,7 @@ public class Scripture
     private string _text;
 
 
-//CONSTRUCTOR
+//CONSTRUCTOR - to read the FILE and obtain a scripture to initialize the private member variables _name and _text
     public Scripture (){
 
         _scriptures = System.IO.File.ReadAllLines("Scriptures.txt");
@@ -37,6 +37,19 @@ public class Scripture
         }
 
     }
+
+//To store a new scripture
+    public void SaveScripture(string referenceName, string TextScripture){
+
+        using (StreamWriter outputFile = new StreamWriter("Scriptures.txt", append: true))
+            {
+                outputFile.WriteLine($"{referenceName}{TextScripture}");
+                Console.Write("Scripture Saved! - press ENTER to continue...");
+                Console.ReadLine();
+
+            }
+    }
+
 
 
     public string GetNameScripture()
