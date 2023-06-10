@@ -4,11 +4,11 @@
     "tasks": [
 
 
-        // {
-        //     "label": "echo",
-        //     "type": "shell",
-        //     "command": "echo ${workspaceFolder}"
-        // },
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo ${workspaceFolder}"
+        },
 
         {
             "label": "build-sandbox-Sandbox",
