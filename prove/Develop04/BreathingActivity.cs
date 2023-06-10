@@ -30,10 +30,10 @@ public class BreathingActivity : Activity
         while (startTime < futureTime) {
             Console.WriteLine("");
             Console.Write("Breathe IN and hold on...");
-            base.Pausing("countdown",_timeBreatheIN + sum);
+            base.Pausing("loadBar",_timeBreatheIN + sum);
             Console.WriteLine("");
             Console.Write("Now breathe OUT...");
-            base.Pausing("countdown",_timeBreatheOut + sum);
+            base.Pausing("removeBar",_timeBreatheOut + sum);
             sum += 1;
             startTime = DateTime.Now;
             Console.WriteLine("");

@@ -2,6 +2,10 @@ using System;
 
 class Program
 {
+
+    //
+
+
     static void Main(string[] args)
     {
         // Console.WriteLine("Hello Develop04 World!");
@@ -82,7 +86,7 @@ class Program
                 Console.WriteLine("");
                 AskTimeUser(listingActivity1);
                 GetReady(listingActivity1);
-                
+
                 Console.WriteLine("List as many responses you can to the following prompt:");
                 Console.Write("--- ");
                 Console.Write(listingActivity1.GetRandomPrompt());
@@ -102,6 +106,7 @@ class Program
 
                 Console.Write("");
                 Console.Write($"You listed {listingActivity1.GetCountItems()} items!");
+                Console.WriteLine("");
                 listingActivity1.DisplayEndingMessage();
                 Console.WriteLine("");
 

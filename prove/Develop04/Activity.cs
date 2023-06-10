@@ -10,6 +10,7 @@ public class Activity
     private string _nameActivity;
     private string _description;
     private int _duration;
+    string _loadingbar = "";
 
 
 //CONSTRUCTORS
@@ -36,6 +37,14 @@ public class Activity
     
     public void SetDuration(int seconds) {
         _duration = seconds;
+    }
+
+
+    public void SetLoadingBar(String loadingBar){
+        _loadingbar = loadingBar;
+    }
+    public string GetLoadingBar(){
+        return _loadingbar;
     }
 
 
@@ -85,9 +94,9 @@ public class Activity
         else if (type == "loading"){ 
 
             Console.WriteLine("");
-            
+
             DateTime startTime = DateTime.Now;
-            DateTime futureTime = startTime.AddSeconds(secondsToPuase);
+            DateTime futureTime = startTime.AddSeconds(secondsToPuase/2);
             double div1 = ((double)secondsToPuase*(double)1000)/(double)100;
             int div2 = Convert.ToInt32(div1);
             while (startTime < futureTime)
@@ -97,7 +106,53 @@ public class Activity
                 startTime = DateTime.Now;
                 
             }
+
+            DateTime startTime2 = DateTime.Now;
+            DateTime futureTime2 = startTime2.AddSeconds(secondsToPuase/2);
+            while (startTime2 < futureTime2)
+            {
+                Console.Write("\b \b");
+                Thread.Sleep(div2);
+                startTime2 = DateTime.Now;
+                
+            }
+
             Console.WriteLine("");
+
+
+        }  else if (type == "loadBar") {
+
+            DateTime startTime = DateTime.Now;
+            DateTime futureTime = startTime.AddSeconds(secondsToPuase);
+            double div1 = ((double)secondsToPuase*(double)1000)/(double)100;
+            int div2 = Convert.ToInt32(div1);
+
+            _loadingbar = "";
+            while (startTime < futureTime)
+            {
+                _loadingbar += "|";
+                Console.Write("|");
+                Thread.Sleep(div2);
+                startTime = DateTime.Now;
+                
+            }
+
+        } else if (type == "removeBar") {
+        
+
+            DateTime startTime2 = DateTime.Now;
+            DateTime futureTime2 = startTime2.AddSeconds(secondsToPuase);
+            double div1 = ((double)secondsToPuase*(double)1000)/(double)100;
+            int div2 = Convert.ToInt32(div1);
+
+            Console.Write(_loadingbar);
+            while (startTime2 < futureTime2)
+            {
+                Console.Write("\b \b");
+                Thread.Sleep(div2);
+                startTime2 = DateTime.Now;
+                
+            }
 
 
         } else if (type == "spinner") {
