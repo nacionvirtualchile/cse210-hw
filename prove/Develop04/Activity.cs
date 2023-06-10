@@ -40,14 +40,6 @@ public class Activity
     }
 
 
-    public void SetLoadingBar(String loadingBar){
-        _loadingbar = loadingBar;
-    }
-    public string GetLoadingBar(){
-        return _loadingbar;
-    }
-
-
 //METHODS
     public void DisplayStartingMessage(){
         Console.Clear();

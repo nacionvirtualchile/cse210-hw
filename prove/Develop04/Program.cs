@@ -3,7 +3,16 @@ using System;
 class Program
 {
 
-    //
+//Exceeding Requirements:
+//        - I create the follow animations:
+//                - spinner
+//                - countdown
+//                - loading for "Get Ready" part (shows a bar that increases and decreases)
+//                - LoadBar for breathing activity (shows a bar that increases when people breath IN)
+//                - LoadBar for breathing activity (shows a bar that decreases when people breath OUT)
+//        - The program controls the time of activity: 
+//                - if the user input more than 35 seconds, the program set to 35 and show a message saying that
+//                - if the user input less than 10 seconds, the program set to 10 and show a message saying that
 
 
     static void Main(string[] args)
