@@ -1,0 +1,6 @@
+0
+SimpleGoal,Goal1,description1,10,False
+SimpleGoal,Goal2,description2,20,False
+EternalGoal,Goal3,description3,30
+CheckListGoal,Goal4,description4,40,400,2,0
+SimpleGoal,Goal5,description5,500,False
