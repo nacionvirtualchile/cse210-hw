@@ -185,7 +185,7 @@ class Program
 
 
                 //ASK AND CHECK A CORRECT INPUT
-                int answer = menu1.GetChoiceFromUser();;
+                int answer = menu1.GetChoiceFromUserRecordEvent();;
                 if (answer==0){
                     continue;
                 }
