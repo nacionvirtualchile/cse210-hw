@@ -189,7 +189,7 @@ class Program
                 if (answer==0){
                     continue;
                 }
-
+ 
 
                 Goal goalToRecord = _listOfGoals[answer];
 
