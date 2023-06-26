@@ -1,13 +1,20 @@
 using System;
 using System.IO; 
 
+/*
+Exceeding Requirements: 
+- If the user enters (input) a bad option in any menu, the program shows a message and returns to the main menu 
+- the user can't SAVE if there is not a goal in memory. The program shows a message for that
+- the user can't RECORD an EVENT if the goal is completed and the program shows a message for that
+- The mark for eternal goal is not [ ], is {Forever]
+- The program shows a message if the user completes a CheckListGoal
+*/
+
 class Program
 {
     
     static void Main(string[] args)
     {
-        // Console.WriteLine("Hello Develop05 World!");
-        //string fileName = "EternalQuest.txt"; 
 
         Menu menu1 = new Menu();
         int option = 0;
