@@ -11,19 +11,23 @@ public class Subscription
     private int _ID;
     private string _client;
     private string _service;
-    private string _date;
+    private DateTime _date;
     private int _amountFirstYear;
     private int _amountNextYears;
     private int _pendingDebt;
 
 
 //CONSTRUCTORS
-    public Subscription (string client, string service, int amountFirstYear, int amountNextYears)
+    public Subscription (int ID, string client, string service, int amountFirstYear, int amountNextYears)
     {
         _client = client;
         _service = service;
         _amountFirstYear = amountFirstYear;
         _amountNextYears = amountNextYears;
+        _date = DateTime.Now;
+        _ID = ID;
+
+
     }
 
 //METHODS
@@ -36,7 +40,7 @@ public class Subscription
     public void SetService(string service) {
         _service = service;
     }
-   public void SetDate(string date) {
+   public void SetDate(DateTime date) {
         _date = date;
     }
    public void SetAmountFirstYear(int amount) {
@@ -59,7 +63,7 @@ public class Subscription
     public string GetService() {
         return _service;
     }
-    public string GetDate() {
+    public DateTime GetDate() {
         return _date;
     }
     public int GetAmountFirstYear() {
@@ -74,18 +78,13 @@ public class Subscription
 
 
     public void DisplaySubscriptionInfo() {
-        Console.WriteLine("______________");
-        Console.WriteLine("______________");
-        Console.WriteLine("DISPLAY SUSCRIPTION");
-        Console.WriteLine($"ID: {_ID}");
-        Console.WriteLine($"Client: {_client}");
-        Console.WriteLine($"Service: {_service}");
-        Console.WriteLine($"Date: {_date}");
-        Console.WriteLine($"Price First Year: {_amountFirstYear}");
-        Console.WriteLine($"Price Next Years: {_amountNextYears}");
-        Console.WriteLine($"Pending Debt: {_pendingDebt}");
-        Console.WriteLine("______________");
-        Console.WriteLine("______________");
+        Console.Write($"ID:{_ID} - ");
+        Console.Write($"Client:{_client} - ");
+        Console.Write($"Service:{_service} - ");
+        Console.Write($"Date:{_date} - ");
+        Console.Write($"Price First Year:{_amountFirstYear} - ");
+        Console.WriteLine($"Price Next Years:{_amountNextYears}");
+
     }
 
 

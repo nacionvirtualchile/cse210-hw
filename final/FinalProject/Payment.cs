@@ -17,8 +17,7 @@ public class Payment
     public Payment (int subscriptionID, int amount)
     {
         _subscriptionID = subscriptionID;
-        DateTime currentDateTime = DateTime.Now;
-        _date = currentDateTime;
+        _date = DateTime.Now;
         _amount = amount;
     }
 
@@ -26,10 +25,15 @@ public class Payment
 //METHODS
 
 
+   public void SetSubsID(int subscriptionID) {
+        _subscriptionID = subscriptionID;
+    }
    public void SetAmmount(int amount) {
         _amount = amount;
     }
-
+   public void SetDate(DateTime date) {
+        _date = date;
+    }
 
     public int GetAmmount() {
         return _amount;
@@ -38,6 +42,17 @@ public class Payment
         return _date;
     }
     public int GetID() {
-        return _amount;
+        return _subscriptionID;
     }
+
+    public void DisplayPaymentInfo() {
+        Console.Write($"Subscripion:{_subscriptionID} - ");
+        Console.Write($"Date:{_date} - ");
+        Console.WriteLine($"Amount:{_amount} - ");
+
+    }
+
+
+
+
 }

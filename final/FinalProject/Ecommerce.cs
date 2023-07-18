@@ -13,7 +13,7 @@ public class Ecommerce : OnlineService
 
 
 //CONSTRUCTORS
-    public Ecommerce (Boolean paidMethods, Boolean shipment, int extraModules, string name, string domain, int priceFirstYear, string description) : base (name, domain, description)
+    public Ecommerce (string type, int extraModules, string name, int domains, int basePrice, string description, Boolean paidMethods, Boolean shipment) : base (type, name, domains, basePrice, description)
     {
         _extraModules = extraModules;
         _shipment = shipment;
@@ -24,48 +24,47 @@ public class Ecommerce : OnlineService
 
 
 //METHODS
-    public void SetExtraModules(int extraModules) {
+    public override void SetExtraModules(int extraModules) {
         _extraModules = extraModules;
     }
-    public void SetPaidMethods(Boolean paidMethods) {
+    public override void SetPaidMethods(Boolean paidMethods) {
         _paidMethods = paidMethods;
     }
-    public void SetShipment(Boolean shipment) {
+    public override void SetShipment(Boolean shipment) {
         _shipment = shipment;
     }
-    public int GetExtraModules() {
+    public override int GetExtraModules() {
         return _extraModules;
     }
-    public Boolean GetPaidMethods() {
+    public override Boolean GetPaidMethods() {
         return _paidMethods;
     }
-    public Boolean GetShipment() {
+    public override Boolean GetShipment() {
         return _shipment;
     }
 
     public override int CalculatePriceFirstYear() {
-        int calculatedPrice = base.GetPriceFirstYear() + (50  * _extraModules);
+        int calculatedPrice = base.GetBasePrice() + (35000  * _extraModules) + (15000  * base.GetDomains());
         if (_paidMethods == true){
-            calculatedPrice += 50;
+            calculatedPrice += 35000;
         }
         if (_shipment == true){
-            calculatedPrice += 50;
+            calculatedPrice += 35000;
         }
         base.SetPriceFirstYear(calculatedPrice);
         return calculatedPrice;
     }
+    
     public override void DisplayInfoService() {
-        Console.WriteLine("______________");
-        Console.WriteLine("______________");
-        Console.WriteLine("DISPLAY ECOMMERCE SERVICE");
-        Console.WriteLine($"Domain: {base.GetDomain}");
-        Console.WriteLine($"Paid Methods?: {_paidMethods}");
-        Console.WriteLine($"Shipment?: {_shipment}");
-        Console.WriteLine($"Quantity Extra Modules: {_extraModules}");
-        Console.WriteLine($"Price First Year: {base.GetPriceFirstYear}");
-        Console.WriteLine($"Description: {base.GetDescription}");
-        Console.WriteLine("______________");
-        Console.WriteLine("______________");
+        Console.Write($"Type:{base.GetType()} - ");
+        Console.Write($"Name:{base.GetName()} - ");
+        Console.Write($"Domain:{base.GetDomains()} - ");
+        Console.Write($"Extra Modules:{_extraModules} - ");
+        Console.Write($"Paid Methods?:{_paidMethods} - ");
+        Console.Write($"Shipment?:{_shipment} - ");
+        Console.Write($"Base Price:{base.GetBasePrice()} - ");
+        Console.WriteLine($"Price First Year:{base.GetPriceFirstYear()}");
+        Console.WriteLine($"Description:{base.GetDescription()} ");
     }
 
 

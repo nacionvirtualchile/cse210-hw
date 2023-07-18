@@ -9,14 +9,14 @@ public class Client
 
 //VARIABLES
     private string _name;
-    private int _phone;
+    private string _phone;
     private string _email;
     private string _contactPerson;
 
 
 
 //CONSTRUCTORS
-    public Client (string name, int phone, string email, string contactPerson){
+    public Client (string name, string phone, string email, string contactPerson){
         _name = name;
         _phone = phone;
         _email = email;
@@ -29,7 +29,7 @@ public class Client
         _name = name;
     }
 
-    public void SetPhone(int phone) {
+    public void SetPhone(string phone) {
         _phone = phone;
     }
 
@@ -46,7 +46,7 @@ public class Client
         return _name;
     }
 
-    public int GetPhone() {
+    public string GetPhone() {
         return _phone;
     }
 
@@ -60,7 +60,10 @@ public class Client
 
 
     public void DisplayClientInfo(){
-        
+        Console.Write($"Name:{_name} - ");
+        Console.Write($"Phone:{_phone} - ");
+        Console.Write($"Email:{_email} - ");
+        Console.WriteLine($"Contact Person:{_contactPerson}");
     }
 
 

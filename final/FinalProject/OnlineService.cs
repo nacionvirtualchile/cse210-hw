@@ -8,27 +8,37 @@ public abstract class OnlineService
 {
 
 //VARIABLES
+    private string _type;
     private string _name;
-    private string _domain;
+    private int _domains;
+    private int _basePrice;
     private int _priceFirstYear;
     private string _description;
 
 
 //CONSTRUCTORS
-    public OnlineService (string name, string domain, string description){
+    public OnlineService (string type, string name, int domains, int basePrice, string description){
+        _type = type;
         _name = name;
-        _domain = domain;
+        _domains = domains;
         _description = description;
+        _basePrice = basePrice;
     }
 
 
 
 //METHODS
+    public void SetType(string type) {
+        _type = type;
+    }
     public void SetName(string name) {
         _name = name;
     }
-    public void SetDomain(string domain) {
-        _domain = domain;
+    public void SetDomain(int domains) {
+        _domains = domains;
+    }
+    public void SetBasePrice(int basePrice) {
+        _basePrice = basePrice;
     }
     public void SetPriceFirstYear(int priceFirstYear) {
         _priceFirstYear = priceFirstYear;
@@ -38,11 +48,18 @@ public abstract class OnlineService
     }
 
 
+
+    public string GetTypeOfService() {
+        return _type;
+    }
     public string GetName() {
         return _name;
     }
-    public string GetDomain() {
-        return _domain;
+    public int GetDomains() {
+        return _domains;
+    }
+    public int GetBasePrice() {
+        return _basePrice;
     }
     public int GetPriceFirstYear() {
         return _priceFirstYear;
@@ -55,8 +72,25 @@ public abstract class OnlineService
 
     public abstract int CalculatePriceFirstYear();
     public abstract void DisplayInfoService();
-
-
-
+    public virtual int GetExtraModules() {
+        return -1;
+    }
+    public virtual void SetExtraModules(int extraModules) {
+    }
+    public virtual int GetMailboxesQuantity() {
+        return -1;
+    }
+    public virtual void SetMailboxesQuantity(int mailboxesQuantity) {
+    }
+    public virtual Boolean GetShipment() {
+        return false;
+    }
+    public virtual void SetShipment(Boolean shipment) {
+    }
+    public virtual Boolean GetPaidMethods() {
+        return false;
+    }
+    public virtual void SetPaidMethods(Boolean paidMethods) {
+    }
 
 }

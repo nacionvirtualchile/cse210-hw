@@ -12,7 +12,7 @@ public class Email : OnlineService
 
 
 //CONSTRUCTORS
-    public Email (int mailboxesQuantity, string name, string domain, int priceFirstYear, string description) : base (name, domain, description)
+    public Email (string type, int mailboxesQuantity, string name, int domains, int basePrice, string description) : base (type, name, domains, basePrice, description)
     {
         _mailboxesQuantity = mailboxesQuantity;
     }
@@ -20,29 +20,27 @@ public class Email : OnlineService
 
 
 //METHODS
-    public void SetMailboxesQuantity(int mailboxesQuantity) {
+    public override void SetMailboxesQuantity(int mailboxesQuantity) {
         _mailboxesQuantity = mailboxesQuantity;
     }
-    public int GetMailboxesQuantity() {
+    public override int GetMailboxesQuantity() {
         return _mailboxesQuantity;
     }
 
 
     public override int CalculatePriceFirstYear() {
-        int calculatedPrice = base.GetPriceFirstYear() * _mailboxesQuantity;
+        int calculatedPrice = base.GetBasePrice() + (7000 * _mailboxesQuantity);
         base.SetPriceFirstYear(calculatedPrice);
         return calculatedPrice;
     }
     public override void DisplayInfoService() {
-        Console.WriteLine("______________");
-        Console.WriteLine("______________");
-        Console.WriteLine("DISPLAY EMAIL SERVICE");
-        Console.WriteLine($"Domain: {base.GetDomain}");
-        Console.WriteLine($"Quantity of Mailboxes: {_mailboxesQuantity}");
-        Console.WriteLine($"Price First Year: {base.GetPriceFirstYear}");
-        Console.WriteLine($"Description: {base.GetDescription}");
-        Console.WriteLine("______________");
-        Console.WriteLine("______________");
+        Console.Write($"Type:{base.GetType()} - ");
+        Console.Write($"Name:{base.GetName()} - ");
+        Console.Write($"Domains:{base.GetDomains()} - ");
+        Console.Write($"Quantity of Mailboxes:{_mailboxesQuantity} - ");
+        Console.Write($"Base Price:{base.GetBasePrice()} - ");
+        Console.WriteLine($"Price First Year:{base.GetPriceFirstYear()}");
+        Console.WriteLine($"Description:{base.GetDescription()} ");
     }
 
 

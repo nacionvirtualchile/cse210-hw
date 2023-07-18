@@ -12,37 +12,38 @@ public class Web: OnlineService
 
 
 //CONSTRUCTORS
-    public Web (int extraModules, string name, string domain, int priceFirstYear, string description) : base (name, domain, description)
+    public Web (string type, int extraModules, string name, int domains, int basePrice, string description) : base (type, name, domains, basePrice, description)
     {
         _extraModules = extraModules;
+
     }
 
 
 
 //METHODS
-    public void SetExtraModules(int extraModules) {
+    public override void SetExtraModules(int extraModules) {
         _extraModules = extraModules;
     }
-    public int GetExtraModules() {
+    public override int GetExtraModules() {
         return _extraModules;
     }
 
 
     public override int CalculatePriceFirstYear() {
-        int calculatedPrice = base.GetPriceFirstYear() + (50  * _extraModules);
+        int calculatedPrice = base.GetBasePrice() + (25000  * _extraModules) + (15000  * base.GetDomains());
         base.SetPriceFirstYear(calculatedPrice);
         return calculatedPrice;
     }
     public override void DisplayInfoService() {
-        Console.WriteLine("______________");
-        Console.WriteLine("______________");
-        Console.WriteLine("DISPLAY WEB SERVICE");
-        Console.WriteLine($"Domain: {base.GetDomain}");
-        Console.WriteLine($"Quantity Extra Modules: {_extraModules}");
-        Console.WriteLine($"Price First Year: {base.GetPriceFirstYear}");
-        Console.WriteLine($"Description: {base.GetDescription}");
-        Console.WriteLine("______________");
-        Console.WriteLine("______________");
+        Console.Write($"Type:{base.GetType()} - ");
+        Console.Write($"Name:{base.GetName()} - ");
+        Console.Write($"Domains:{base.GetDomains()} - ");
+        Console.Write($"Extra Modules:{_extraModules} - ");
+        Console.Write($"Base Price:{base.GetBasePrice()} - ");
+        Console.WriteLine($"Price First Year:{base.GetPriceFirstYear()}");
+        Console.WriteLine($"Description:{base.GetDescription()} ");
+        
+
     }
 
 

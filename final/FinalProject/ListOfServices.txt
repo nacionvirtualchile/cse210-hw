@@ -1,0 +1,4 @@
+Web|2|WEB for STARTUPS Plan 1|1|55000|A formal or disruptive Website for your startup|120000
+Ecommerce|2|Online Store for your Startup |2|160000|An online store for little enterprises|330000|True|True
+Email|4|Mail for Startups|1|25000|Zoho Mail boxes for entrepreneurs|53000
+Email|25|Email for enterprises|2|75000|Prrofesional EXCHANGE email for enterprises|250000
